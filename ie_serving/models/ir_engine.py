@@ -91,6 +91,21 @@ class IrEngine():
             core.add_extension(
                 extension_path=GLOBAL_CONFIG['cpu_extension'],
                 device_name='CPU')
+        ###############################
+        ###############################
+        ###############################
+    with open(model_xml, mode='rb') as file:
+        model_xml_file_bytes = file.read()
+    with open(model_bin, mode='rb') as file:
+        model_bin_file_bytes = file.read()
+ie = IECore()
+    net = ie.read_network(model=model_xml_file_bytes, weights=model_bin_file_bytes, init_from_buffer = True)
+
+            
+        ###############################
+        ###############################
+        ###############################
+
         net = IENetwork(model=model_xml, weights=model_bin)
         batching_info = BatchingInfo(batch_size_param)
         shape_info = ShapeInfo(shape_param, net.inputs)
