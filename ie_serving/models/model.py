@@ -307,6 +307,7 @@ class Model(ABC):
             'model_version': version_attributes['version_number'],
             'model_bin': version_attributes['bin_file'],
             'model_xml': version_attributes['xml_file'],
+            'password': version_attributes['password'],
             'mapping_config': version_attributes['mapping_config'],
             'batch_size_param': version_attributes['batch_size_param'],
             'shape_param': version_attributes['shape_param'],
