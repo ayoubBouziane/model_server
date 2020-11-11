@@ -98,9 +98,8 @@ class IrEngine():
             model_xml_file_bytes = file.read()
         with open(model_bin, mode='rb') as file:
             model_bin_file_bytes = file.read()
-        ie= IECore( )
-        net = ie.read_network(model=model_xml_file_bytes, weights=model_bin_file_bytes, init_from_buffer = True)
-        #        net = IENetwork(model=model_xml, weights=model_bin)
+        net = core.read_network(model=model_xml_file_bytes, weights=model_bin_file_bytes, init_from_buffer = True)
+        #net = IENetwork(model=model_xml, weights=model_bin)
         ###############################
         ###############################
         ###############################
